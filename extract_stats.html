@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hours per Tutor | Stats</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    table, th, td, tr {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    td {
+    text-align: center;
+    }
+    td, th {
+    padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<table id="results"></table>
+<script>
+function load() {
+  $.post('https://api.ncvpsptc.repl.co/data-analytics/tutor_from_md5',{hash:location.hash.slice(1)},(data)=>{
+  $.post('https://api.ncvpsptc.repl.co/data-analytics/hours',{name:data},(res)=>{
+    for(let i in res) {
+      let tr = document.createElement('tr');
+      for(let j in res[i]) {
+        let cell;
+        if(Number(i)==0) {
+        cell = document.createElement('th');
+        } else {
+        cell = document.createElement('td');
+        }
+        cell.textContent = res[i][j];
+        tr.appendChild(cell);
+      }
+      document.getElementById('results').appendChild(tr);
+    }
+  });
+  });
+
+
+}
+  
+$(document).ready(load);
+  
+</script>
+</body>
+</html>
