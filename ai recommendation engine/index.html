@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+NCVPS PTC AI - Home
+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css"></link>
+  <style>
+  .flex-container {
+  display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+    div {
+    flex-grow: 1;
+      text-align: center;
+    }
+    p {
+      margin-left: 10px;
+      }
+    button:enabled {
+    padding: 50px;
+      border: none;
+      border-radius: 0px;
+      background-color: silver;
+      color: black;
+    transition-duration: 0.4s;
+    }
+    button:hover:enabled {
+    background-color: gray;
+    cursor: pointer;
+    }
+    button:disabled {
+      padding: 50px;
+      border: none;
+      border-radius: 0px;
+    background-color: #e6e6e6;
+    transition-duration: 0.4s;
+    color: gray;
+    cursor: not-allowed;
+    }
+    @media screen and (max-width: 1150px) { 
+      button:enabled {
+      padding: 50px;
+        width: 100%;
+      border: thin solid lightgray;
+      }
+      button:disabled {
+      padding: 50px;
+        width: 100%;
+      border: thin solid lightgray;
+      }
+      .flex-container {
+      flex-direction: column;
+      }
+      div {
+      width: 100%;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+<h1 style="text-align:center">NCVPS PTC AI - Home</h1>
+<hr/>
+  <p>Choose below what you need help with.</p>
+  <div class="flex-container">
+    <div><button onclick="location.assign('https://ncvpsptc.github.io/ai/tech-support')">Tech Support</button></div>
+  <div><button disabled>Math</button></div>
+    <div><button disabled>Science</button></div>
+    <div><button disabled>English</button></div>
+    <div><button disabled>Social Studies</button></div>
+  <div><button disabled>Foreign Language</button></div>
+  <div><button disabled>CTE</button></div>
+</div>
+  
+</body>
+
+
+
+</html>
